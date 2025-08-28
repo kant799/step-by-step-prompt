@@ -7,7 +7,8 @@
 - 可以在对话中指定配色方案
 - 可以在对话中指定卡片语言
 
-<img src=“” width=“700”>
+<img src=“https://github.com/kant799/step-by-step-prompt/blob/main/images/PixPin_2025-08-28_14-25-57.png” width=“700”>
+
 ### 分步骤流程卡片
 ```
 你是一位世界顶尖的视觉总监，具有丰富的UI/UX设计经验，负责创造一个独立的 HTML 页面，用于将一个分步骤流程内容进行可视化呈现。
