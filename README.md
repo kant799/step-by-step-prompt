@@ -6,9 +6,10 @@
 3. 小技巧：
 - 可以在对话中指定配色方案
 - 可以在对话中指定卡片语言
+- 还有更多需求可根据内容自行指定
 
-<img src=“https://raw.githubusercontent.com/kant799/step-by-step-prompt/refs/heads/main/images/PixPin_2025-08-28_14-25-57.png” width=“700”>
-<img src=“https://raw.githubusercontent.com/kant799/step-by-step-prompt/refs/heads/main/images/PixPin_2025-08-28_14-40-18.png” width=“700”>
+![showcasezh](./images/PixPin_2025-08-28_14-25-57.png)
+![showcaseen](./images/PixPin_2025-08-28_14-40-29.png)
 
 ### 分步骤流程卡片
 ```
