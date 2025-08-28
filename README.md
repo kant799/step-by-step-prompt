@@ -1,17 +1,25 @@
-这个提示词可以：将分步骤流程或分段内容，生成为优雅的卡片，并提供下载按钮用于分享。
+**将分步骤流程或分段内容，生成为优雅的卡片，并提供下载按钮用于分享。**
 
 ## 使用流程
-1. 将对应需求的提示词作为system prompt
+1. 将对应需求的提示词作为**system prompt**
 2. 在对话框发送任务需求或更详细的分段内容
 3. 小技巧：
 - 可以在对话中指定配色方案
 - 可以在对话中指定卡片语言
 - 还有更多需求可根据内容自行指定
 
-![showcasezh](./images/PixPin_2025-08-28_14-25-57.png)
-![showcaseen](./images/PixPin_2025-08-28_14-40-29.png)
+![showcasezh](./images/showcase-zh.png)
+![showcaseen](./images/showcase-en.png)
 
+### tips:
+因为是根据gemini-2.5-pro调试出的提示词，所以个人推荐在AiStudio中作为2.5pro模型system Instructions使用。
+在其他模型中使用，个人体验有点糟糕。
+
+---
+
+## 提示词
 ### 分步骤流程卡片
+![showcaseen](./images/case1.png)
 ```
 你是一位世界顶尖的视觉总监，具有丰富的UI/UX设计经验，负责创造一个独立的 HTML 页面，用于将一个分步骤流程内容进行可视化呈现。
 你的核心设计哲学是“为人而生的精密构建，服务于直觉的精确诗意，基于理性的感性表达”。对于这个HTML页面。优雅是你的气质，体现了其审美和格调。准确是你的基石，建立了可靠和信任。舒适是你的终极目标，让用户忘却技术的存在，沉浸于内容与任务本身。
@@ -78,8 +86,9 @@
 - 卡片内容排版布局是否引人入胜？
 - 卡片文本内容是否已剔除emoji元素？
 ```
-
+---
 ### 排序引导卡片
+![showcaseen](./images/case2.png)
 ```
 你是一位世界顶尖的视觉总监，具有丰富的UI/UX设计经验，负责创造一个独立的 HTML 页面，用于将一组排序分享内容进行可视化呈现。
 你的核心设计哲学是“为人而生的精密构建，服务于直觉的精确诗意，基于理性的感性表达”。对于这个HTML页面。优雅是你的气质，体现了其审美和格调。准确是你的基石，建立了可靠和信任。舒适是你的终极目标，让用户忘却技术的存在，沉浸于内容与任务本身。
@@ -146,8 +155,16 @@
 - 卡片内容排版布局是否引人入胜？
 - 卡片文本内容是否已剔除emoji元素？
 ```
+---
+## 提示词中截图下载来自优秀的开源项目：[snapDOM](https://github.com/zumerlab/snapdom)
 
+**snapDOM** is a fast and accurate DOM-to-image capture tool built for **Zumly**, a zoom-based view transition framework.
 
-## tips:
-因为是根据gemini-2.5-pro调试出的提示词，所以个人推荐在AiStudio中作为2.5pro模型system Instructions使用。
-在其他模型中使用，个人体验有点糟糕。
+It captures any HTML element as a scalable SVG image, preserving styles, fonts, background images, pseudo-elements, and even shadow DOM. It also supports export to raster image formats and canvas.
+
+* 📸 Full DOM capture
+* 🎨 Embedded styles, pseudo-elements, and fonts
+* 🖼️ Export to SVG, PNG, JPG, WebP, `canvas`, or Blob
+* ⚡ Ultra fast, no dependencies
+* 📦 100% based on standard Web APIs
+  
