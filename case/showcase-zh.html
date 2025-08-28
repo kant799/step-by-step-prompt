@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优雅流程卡片生成器</title>
+
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Noto Sans SC for elegant Chinese typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- snapDOM for card downloading -->
+    <script src="https://cdn.jsdelivr.net/npm/@zumer/snapdom/dist/snapdom.min.js"></script>
+
+    <style>
+        /* Define custom styles based on the design philosophy */
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            height: 100vh;
+            overflow: hidden; /* Prohibit vertical scrolling on body */
+        }
+        
+        /* Custom scrollbar for a polished look in Webkit browsers */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: #f1f5f9; /* slate-100 */
+            border-radius: 10px;
+        }
+
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #4f46e5; /* indigo-600 */
+            border-radius: 10px;
+            border: 2px solid #f1f5f9; /* slate-100 */
+        }
+        
+        .horizontal-scroll-container {
+            /* For Firefox scrollbar styling */
+            scrollbar-width: thin;
+            scrollbar-color: #4f46e5 #f1f5f9;
+        }
+
+        /* Prevent shrinking of flex items */
+        .card-wrapper {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 flex flex-col items-center justify-center">
+
+    <!-- Header: Task Summary -->
+    <header class="w-full text-center py-6">
+        <h1 class="text-2xl font-bold text-slate-700">可视化流程指南：AI 提示词的正确使用方式</h1>
+    </header>
+
+    <!-- Main Body: Horizontal Scrolling Card Container -->
+    <main id="main-container" class="horizontal-scroll-container w-full flex-grow flex items-center overflow-x-auto overflow-y-hidden px-12 md:px-20 space-x-12">
+        
+        <!-- Card 0: Initial Card (小红书 Style) -->
+        <div class="card-wrapper flex flex-col items-center space-y-4">
+            <div id="card-0" class="w-[600px] h-[800px] bg-white rounded-3xl shadow-2xl flex flex-col justify-center items-center p-16 text-center relative overflow-hidden">
+                <i class="fa-solid fa-wand-magic-sparkles absolute -bottom-12 -right-12 text-slate-100 text-[300px] z-0 transform -rotate-12"></i>
+                <div class="relative z-10">
+                    <h2 class="text-6xl font-black text-slate-800 leading-tight">一键解锁<br>高颜值<span class="text-indigo-600">流程图</span></h2>
+                    <p class="mt-8 text-2xl text-slate-600 leading-relaxed">
+                        只需三步，将枯燥的文字步骤，变身为设计感十足、可一键分享的视觉卡片。彻底告别繁琐，拥抱<span class="text-indigo-600">优雅</span>与<span class="text-indigo-600">效率</span>。
+                    </p>
+                </div>
+                 <!-- Scroll Hint -->
+                 <div class="absolute bottom-10 right-10 flex items-center space-x-3 text-indigo-500 animate-pulse z-10">
+                    <span class="font-bold text-lg">向右滑动</span>
+                    <i class="fas fa-arrow-right text-2xl"></i>
+                </div>
+            </div>
+            <button onclick="downloadCard('card-0', '优雅流程卡片-封面')" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300 flex items-center space-x-2">
+                <i class="fa-solid fa-download"></i>
+                <span>下载封面</span>
+            </button>
+        </div>
+
+        <!-- Card 1: Step 1 -->
+        <div class="card-wrapper flex flex-col items-center space-y-4">
+            <div id="card-1" class="w-[600px] h-[800px] bg-white rounded-3xl shadow-2xl flex flex-col p-12 relative overflow-hidden">
+                <i class="fa-solid fa-robot absolute -bottom-16 -right-12 text-slate-100 text-[320px] z-0 transform rotate-12"></i>
+                <div class="relative z-10">
+                    <span class="text-9xl font-black text-indigo-600">01</span>
+                    <h3 class="mt-4 text-5xl font-bold text-slate-800">设定创意向导</h3>
+                    <p class="mt-8 text-2xl text-slate-700 leading-relaxed">
+                        将此提示词设定为你的 <span class="font-bold">System Prompt</span>。这是整个魔法的起点，它会为AI注入世界顶尖视觉总监的灵魂与设计哲学，确保后续产出的每一帧都符合最高标准。
+                    </p>
+                </div>
+            </div>
+            <button onclick="downloadCard('card-1', '优雅流程卡片-步骤1')" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300 flex items-center space-x-2">
+                <i class="fa-solid fa-download"></i>
+                <span>下载步骤一</span>
+            </button>
+        </div>
+
+        <!-- Card 2: Step 2 -->
+        <div class="card-wrapper flex flex-col items-center space-y-4">
+            <div id="card-2" class="w-[600px] h-[800px] bg-white rounded-3xl shadow-2xl flex flex-col p-12 relative overflow-hidden">
+                <i class="fa-solid fa-paper-plane absolute -bottom-16 right-0 text-slate-100 text-[320px] z-0 transform -rotate-12"></i>
+                <div class="relative z-10">
+                    <span class="text-9xl font-black text-indigo-600">02</span>
+                    <h3 class="mt-4 text-5xl font-bold text-slate-800">描述灵感蓝图</h3>
+                    <p class="mt-8 text-2xl text-slate-700 leading-relaxed">
+                        在对话框中，清晰地输入你的分步骤内容或核心需求。无论是菜谱、教程还是项目计划，描述越是结构化、越是清晰，最终呈现的视觉效果就越是精准、舒适和优雅。
+                    </p>
+                </div>
+            </div>
+            <button onclick="downloadCard('card-2', '优雅流程卡片-步骤2')" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300 flex items-center space-x-2">
+                <i class="fa-solid fa-download"></i>
+                <span>下载步骤二</span>
+            </button>
+        </div>
+
+        <!-- Card 3: Step 3 -->
+        <div class="card-wrapper flex flex-col items-center space-y-4">
+            <div id="card-3" class="w-[600px] h-[800px] bg-white rounded-3xl shadow-2xl flex flex-col p-12 relative overflow-hidden">
+                <i class="fa-solid fa-lightbulb absolute -bottom-16 -right-12 text-slate-100 text-[320px] z-0 transform rotate-12"></i>
+                <div class="relative z-10">
+                    <span class="text-9xl font-black text-indigo-600">03</span>
+                    <h3 class="mt-4 text-5xl font-bold text-slate-800">定制专属风格</h3>
+                    <p class="mt-8 text-2xl text-slate-700 leading-relaxed">
+                        想要更个性化的呈现？尝试在对话中指定<span class="font-bold text-indigo-600">主题色彩</span>或<span class="font-bold text-indigo-600">卡片语言</span>。让每一张卡片都精准地打上你独特的品牌烙印，服务于你的特定场景。
+                    </p>
+                </div>
+            </div>
+            <button onclick="downloadCard('card-3', '优雅流程卡片-步骤3')" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300 flex items-center space-x-2">
+                <i class="fa-solid fa-download"></i>
+                <span>下载步骤三</span>
+            </button>
+        </div>
+        
+        <!-- Card 4: End Card -->
+        <div class="card-wrapper flex flex-col items-center space-y-4">
+            <div id="card-4" class="w-[600px] h-[800px] bg-gradient-to-br from-indigo-600 to-violet-600 rounded-3xl shadow-2xl flex flex-col justify-center items-center p-16 text-center text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-6xl font-black leading-tight">创作之旅<br>邀你同行</h2>
+                    <p class="mt-8 text-2xl leading-relaxed opacity-90">
+                        这套流程卡片你学会了吗？你还希望用它来制作什么内容呢？在评论区分享你的<span class="font-bold underline decoration-wavy">奇思妙想</span>吧！别忘了<span class="font-bold">点赞</span>和<span class="font-bold">收藏</span>，让更多人看到这个实用技巧！
+                    </p>
+                    <div class="mt-12 flex justify-center space-x-12 text-5xl">
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </div>
+                </div>
+            </div>
+            <button onclick="downloadCard('card-4', '优雅流程卡片-结尾')" class="bg-white text-indigo-600 font-bold py-3 px-6 rounded-full hover:bg-slate-100 transition-colors duration-300 flex items-center space-x-2">
+                <i class="fa-solid fa-download"></i>
+                <span>下载结尾</span>
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Horizontal Scrolling with Mouse Wheel ---
+        const container = document.getElementById('main-container');
+        if (container) {
+            container.addEventListener('wheel', function(e) {
+                if (e.deltaY !== 0) {
+                    // Prevent the default vertical scroll
+                    e.preventDefault();
+                    // Scroll horizontally instead
+                    container.scrollLeft += e.deltaY * 1.5; // Multiply for faster scrolling
+                }
+            });
+        }
+
+        // --- Card Download Functionality using snapDOM ---
+        async function downloadCard(cardId, filename) {
+            const cardElement = document.getElementById(cardId);
+            if (!cardElement) {
+                console.error('Card element not found:', cardId);
+                return;
+            }
+            
+            try {
+                // Use snapdom to capture the element
+                // scale: 2 provides a higher resolution image (2x the DOM size)
+                const result = await snapdom(cardElement, { scale: 2 });
+                
+                // Trigger the download
+                await result.download({
+                    format: 'png',
+                    filename: filename
+                });
+            } catch (error) {
+                console.error('Failed to capture or download card:', error);
+                alert('抱歉，图片下载失败。请检查浏览器控制台获取更多信息。');
+            }
+        }
+    </script>
+
+</body>
+</html>

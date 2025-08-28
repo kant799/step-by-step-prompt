@@ -7,7 +7,8 @@
 - 可以在对话中指定配色方案
 - 可以在对话中指定卡片语言
 
-<img src=“https://github.com/kant799/step-by-step-prompt/blob/main/images/PixPin_2025-08-28_14-25-57.png” width=“700”>
+<img src=“https://raw.githubusercontent.com/kant799/step-by-step-prompt/refs/heads/main/images/PixPin_2025-08-28_14-25-57.png” width=“700”>
+<img src=“https://raw.githubusercontent.com/kant799/step-by-step-prompt/refs/heads/main/images/PixPin_2025-08-28_14-40-18.png” width=“700”>
 
 ### 分步骤流程卡片
 ```
