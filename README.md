@@ -4,9 +4,9 @@
 1. 将对应需求的提示词作为**system prompt**
 2. 在对话框发送任务需求或更详细的分段内容
 3. 小技巧：
-- 可以在对话中指定配色方案
-- 可以在对话中指定卡片语言
-- 还有更多需求可根据内容自行指定
+- 可以在对话中指定配色方案、卡片语言
+- 可以在提示词中更改卡片定义尺寸
+> 还有更多根据场景自定义需求待发掘
 
 ![showcasezh](./images/showcase-zh.png)
 ![showcaseen](./images/showcase-en.png)
@@ -156,7 +156,7 @@
 - 卡片文本内容是否已剔除emoji元素？
 ```
 ---
-## 提示词中截图下载来自优秀的开源项目：[snapDOM](https://github.com/zumerlab/snapdom)
+## 截图下载功能来自开源项目：[snapDOM](https://github.com/zumerlab/snapdom)
 
 **snapDOM** is a fast and accurate DOM-to-image capture tool built for **Zumly**, a zoom-based view transition framework.
 
